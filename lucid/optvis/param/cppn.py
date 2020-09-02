@@ -18,7 +18,7 @@
 
 import numpy as np
 import tensorflow as tf
-from tensorflow.contrib import slim
+import tf_slim as slim
 
 
 def _composite_activation(x, biased=True):
