@@ -66,7 +66,7 @@ def write_handle(path, mode=None):
     path = scope_url(path)
 
     if _supports_make_dirs(path):
-        gfile.MakeDirs(os.path.dirname(path))
+        gfile.makedirs(os.path.dirname(path))
 
     if mode is None:
         if _supports_binary_writing(path):
@@ -74,6 +74,6 @@ def write_handle(path, mode=None):
         else:
             mode = "w"
 
-    handle = gfile.Open(path, mode)
+    handle = gfile.GFile(path, mode)
     yield handle
     handle.close()
