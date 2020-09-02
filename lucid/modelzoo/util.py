@@ -55,17 +55,17 @@ def forget_xy(t):
   filter) when we only use early parts of it.
   """
   shape = (t.shape[0], None, None, t.shape[3])
-  return tf.placeholder_with_default(t, shape)
+  return tf.compat.v1.placeholder_with_default(t, shape)
 
 
 def frozen_default_graph_def(input_node_names, output_node_names):
   """Return frozen and simplified graph_def of default graph."""
 
-  sess = tf.get_default_session()
+  sess = tf.compat.v1.get_default_session()
   if sess is None:
     raise RuntimeError("Default session not registered.")
 
-  input_graph_def = tf.get_default_graph().as_graph_def()
+  input_graph_def = tf.compat.v1.get_default_graph().as_graph_def()
   if len(input_graph_def.node) == 0:
     raise RuntimeError("Default graph is empty. Is it possible your model wasn't constructed or is in a different graph?")
 
@@ -78,7 +78,7 @@ def frozen_default_graph_def(input_node_names, output_node_names):
   for node in pruned_graph.node:
       node.device = ""
 
-  all_variable_names = [v.op.name for v in tf.global_variables()]
+  all_variable_names = [v.op.name for v in tf.compat.v1.global_variables()]
   output_graph_def = tf.graph_util.convert_variables_to_constants(
       sess=sess,
       input_graph_def=pruned_graph,
