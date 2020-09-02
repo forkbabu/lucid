@@ -28,18 +28,18 @@ extras = {
 }
 
 setup(
-    name="lucid",
+    name="lucid2",
     packages=find_packages(exclude=[]),
     version=version,
     description=(
         "Collection of infrastructure and tools for research in "
         "neural network interpretability."
     ),
-    author="The Lucid Authors",
-    author_email="deepviz@google.com",
-    url="https://github.com/tensorflow/lucid",
+    author="Sayantan Das",
+    author_email="sayantandas30011998@gmail.com",
+    url="https://github.com/forkbabu/lucid2",
     download_url=(
-        "https://github.com/tensorflow/lucid" "/archive/v{}.tar.gz".format(version)
+        "https://github.com/forkbabu/lucid2" "/archive/v{}.tar.gz".format(version)
     ),
     license="Apache License 2.0",
     keywords=[
