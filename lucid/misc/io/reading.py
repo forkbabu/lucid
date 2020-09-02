@@ -25,7 +25,7 @@ import re
 import logging
 from urllib.parse import urlparse
 from urllib import request
-from tensorflow import gfile
+from tensorflow.io import gfile
 import tensorflow as tf
 from tempfile import gettempdir
 import gc
