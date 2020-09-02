@@ -189,7 +189,7 @@ class Model():
 
   def import_graph(self, t_input=None, scope='import', forget_xy_shape=True, input_map=None):
     """Import model GraphDef into the current graph."""
-    graph = tf.get_default_graph()
+    graph = tf.compat.v1.get_default_graph()
     assert graph.unique_name(scope, False) == scope, (
         'Scope "%s" already exists. Provide explicit scope names when '
         'importing multiple instances of the model.') % scope
