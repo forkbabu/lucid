@@ -65,6 +65,7 @@ setup(
         "filelock",
         "cachetools",
         "more-itertools",
+        "tf_slim",
     ],
     setup_requires=["pytest-runner"],
     tests_require=test_deps,
