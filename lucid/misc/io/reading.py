@@ -121,7 +121,7 @@ def read_handle(url, cache=None, mode="rb"):
 
 
 def _handle_gfile(url, mode="rb"):
-    return gfile.Open(url, mode)
+    return gfile.GFile(url, mode)
 
 
 def _handle_web_url(url, mode="r"):
