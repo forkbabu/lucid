@@ -25,7 +25,7 @@ import os
 import logging
 from contextlib import contextmanager
 from urllib.parse import urlparse
-from tensorflow import gfile
+from tensorflow.io import gfile
 
 from lucid.misc.io.scoping import scope_url
 
